@@ -1,0 +1,1 @@
+This project is an browser extension. Load it !

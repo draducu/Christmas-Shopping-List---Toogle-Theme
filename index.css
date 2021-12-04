@@ -1,0 +1,42 @@
+body {
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+h1 {
+    text-align: center;
+    font-size: 5em;
+    /* padding-top: 0.7em; */
+}
+.greeting {
+    font-size: 5em;
+    text-align: center;
+    font-weight: 600;
+}
+.radio-container {
+    font-size: 4em;
+    height: 2em;
+}
+input[type=radio] {
+    width: 6%;
+    height: 3em;
+}
+img {
+    display: block;
+    margin:0 auto;
+    border-radius: 50%;
+    width: 90vw;
+}
+.christmas {
+    background: linear-gradient(blue, red);
+    color: palegoldenrod;
+}
+.tree {
+    background: linear-gradient(blue, rgb(94, 197, 68));
+    color: azure;
+}
+.snow {
+    background: linear-gradient(blue, rgb(100, 219, 255));
+    color: rgb(255, 255, 255);
+}
+@media screen {
+    
+}
