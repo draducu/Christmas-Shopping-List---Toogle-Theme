@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "version": "1.3",
+    "version": "1.0",
     "name": "Christmas Shoping List & Toogle Theme",
     "action": {
         "default_popup": "index.html",
