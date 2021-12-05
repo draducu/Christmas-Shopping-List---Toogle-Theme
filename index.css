@@ -1,15 +1,19 @@
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Fuzzy Bubbles', cursive;
-    /* width: 700px; */
     margin: 0;
+}
+main {
+    margin: 2em;
 }
 h1 {
     text-align: center;
     font-size: 3em;
-    color: rgb(228, 19, 19);
-    width: 600px;
-    margin: 0 auto;
-    padding-top: 0.4em;
+    color: rgb(255, 78, 78);
+    width:700px;
+    margin: 0.65em auto;
 }
 .columns {
     display: flex;
@@ -26,30 +30,62 @@ h1 {
 }
 .radio-container {
     font-size: 2em;
-    height: 2em;
     margin: 2vw;
 }
 input[type=radio] {
     width: 6%;
     height: 1.5em;
+    margin : 0;
 }
-input[type=text] {
+.list {
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+.insert {
     display: block;
     width: 90%;
-    /* height: 1em; */
-    font-size: 2em;
     margin: 0 auto;
+    margin-bottom: 3em;
+}
+input[type=text] { 
+    display: inline-block;
+    box-sizing: border-box;
+    width: 63.8%;
+    font-size: 2em;
+    padding: 0.19em 0.5em;
+}
+::placeholder {
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+.button-save {
+    display: inline;
+    width: 34.5%;
+    font-size: 2em;
+    border-radius: 0.3em;
+    padding-bottom: 0.22em;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+.listContainer {
+    margin: 0 auto;
+    width: 80%;
+    /* padding: 50px ; */
+    font-size:2em;
+    background-color: rgba(255, 255, 255, 0.25);
+    /* height: 40vw; */
+    
+}
+.listItem { 
+    width: 100%;
+    padding: 10px;
+    border-radius: 0.225;
 }
 input[type=checkbox] {
-    height: 5em;
-    width: 8em;
-}
-
-.list {
-    background-color: royalblue;
+    height: 2em;
+    width: 2em;
+    
 }
 .image {
-    margin: 5vw;
+    /* margin: 5vw; */
 }
 img {
     display: block;
@@ -58,14 +94,14 @@ img {
     height: 40vw;
 }
 .christmas {
-    background: linear-gradient(blue, red);
+    background: linear-gradient(rgb(0, 140, 255), red);
     color: rgb(255, 234, 0);
 }
 .tree {
-    background: linear-gradient(blue, rgb(94, 197, 68));
+    background: linear-gradient(rgb(0, 140, 255), rgb(94, 197, 68));
     color: rgb(0, 222, 0);
 }
 .snow {
-    background: linear-gradient(blue, rgb(100, 219, 255));
+    background: linear-gradient(rgb(0, 140, 255), rgb(100, 219, 255));
     color: whitesmoke;
 }

@@ -6,7 +6,6 @@ const spanTreeEl = document.getElementById("spanTree-el")
 const spanSnowManEl = document.getElementById("spanSnowMan-el")
 const myImageEl = document.getElementById("myImage-el")
 let theme = ""
-
 function reveal(span) {
     if (span.style.display == "none") {
         span.style.display = "inline";
@@ -17,19 +16,15 @@ function hide(span) {
         span.style.display = "none";
     }
 }
-
-if(typeof chrome !== "undefined" && typeof chrome.extension !== "undefined"){
+if (typeof chrome !== "undefined" && typeof chrome.extension !== "undefined") {
     console.log("extensie")
 }
 else {
     console.log("not extensie")
 }
-
 theme = localStorage.getItem("theme")
 console.log(theme)
-
-
-if (theme === null){
+if (theme === null) {
     hide(spanTreeEl)
     hide(spanSnowManEl)
     document.getElementById("christmas-button").checked = true;
