@@ -18,8 +18,16 @@ function hide(span) {
     }
 }
 
+if(typeof chrome !== "undefined" && typeof chrome.extension !== "undefined"){
+    console.log("extensie")
+}
+else {
+    console.log("not extensie")
+}
+
 hide(spanTreeEl)
 hide(spanSnowManEl)
+
 
 christmasBtn.addEventListener("click", function() {
     document.body.classList.remove("snow")
@@ -28,7 +36,7 @@ christmasBtn.addEventListener("click", function() {
     reveal(spanSantaEl)
     hide(spanTreeEl)
     hide(spanSnowManEl)
-    myImageEl.src ="santa.png" //mod de a seta sursa imaginii
+    myImageEl.src ="pictures/santa.png" //mod de a seta sursa imaginii
 })
 treeBtn.addEventListener("click", function() {
     document.body.classList.remove("snow")
@@ -37,7 +45,7 @@ treeBtn.addEventListener("click", function() {
     reveal(spanTreeEl)
     hide(spanSantaEl)
     hide(spanSnowManEl)
-    myImageEl.setAttribute("src", "tree.png") // un mod diferit de a seta sursa imaginii
+    myImageEl.setAttribute("src", "pictures/tree.png") // un mod diferit de a seta sursa imaginii
 })
 snowManBtn.addEventListener("click", function() {
     document.body.classList.remove("christmas")
@@ -46,6 +54,6 @@ snowManBtn.addEventListener("click", function() {
     reveal(spanSnowManEl)
     hide(spanTreeEl)
     hide(spanSantaEl)
-    myImageEl.src ='snowMan.png'
+    myImageEl.src ='pictures/snowMan.png'
 })
 

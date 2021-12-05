@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset='UTF-8'/>
         <title>My Christmas Toogle</title>
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,38 +10,38 @@
     </head>
     <body class="christmas" >
         <main>
-            <section class="toogle">
-                <h1>Let's change the theme</h1>
-                <div class="container">
-                    <p class="greeting">Merry Christmas ! </p>
-                    <div class="radio-container">
-                        <input type="radio" id="christmas-button" name="theme" checked>
-                        <label for="christmas-button">Santa Claus theme <span id="spanSanta-el">🎅</span></label>
+            <h1>Merry Christmas !</h1>
+            <section class="columns">
+                <article class="toogle">
+                    <div class="container">
+                        <p class="title">Let's change the theme</p>
+                        <div class="radio-container">
+                            <input type="radio" id="christmas-button" name="theme" checked>
+                            <label for="christmas-button">Santa Claus theme <span id="spanSanta-el">🎅</span></label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" id="tree-button" name="theme">
+                            <label for="tree-button">Christmas Tree theme <span id="spanTree-el">🎄</span></label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" id="snow-button" name="theme">
+                            <label for="snow-button">Snow Man theme <span id="spanSnowMan-el">⛄</span></label>
+                        </div>
                     </div>
-                    <div class="radio-container">
-                        <input type="radio" id="tree-button" name="theme">
-                        <label for="tree-button">Christmas Tree theme <span id="spanTree-el">🎄</span></label>
+                    <div class="image">
+                        <img id="myImage-el" src="pictures/santa.png" alt="">
+                    </div> 
+                </article>
+                <article class="list">
+                    <p class="title">Check your Christmas list</p>
+                    <div class="checkbox">
+                        <input type="checkbox">
+                        <input type="text">
+                        <input type>
                     </div>
-                    <div class="radio-container">
-                        <input type="radio" id="snow-button" name="theme">
-                        <label for="snow-button">Snow Man theme <span id="spanSnowMan-el">⛄</span></label>
-                    </div>
-                </div>
-                <div class="image">
-                    <img id="myImage-el" src="santa.png" alt="">
-                </div> 
+                </article>
             </section>
-            <section class="list">
-                <h1>Let's update your Christmas list</h1>
-                <div class="checkbox">
-                    <input type="checkbox">
-                    <input type="text">
-                    <input type>
-
-                </div>
-
-            </section>
-        </div>     
+        </main>     
         <script src="index.js"></script>
     </body>
 </html>
