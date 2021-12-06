@@ -6,6 +6,7 @@ const spanTreeEl = document.getElementById("spanTree-el")
 const spanSnowManEl = document.getElementById("spanSnowMan-el")
 const myImageEl = document.getElementById("myImage-el")
 let theme = ""
+// let =
 function reveal(span) {
     if (span.style.display == "none") {
         span.style.display = "inline";
