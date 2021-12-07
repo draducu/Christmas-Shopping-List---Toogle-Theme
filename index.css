@@ -30,7 +30,7 @@ h1 {
     margin: 0.75em;
 }
 .radio-container {
-    font-size: 1.6em;
+    font-size: 1em;
     margin: 1em;
 }
 input[type=radio] {
@@ -38,11 +38,10 @@ input[type=radio] {
     height: 1.1em;
 }
 .image {
-    position: relative;
+    
 }
 img {
     position: relative;
-
     left: 3.2em;
     /* display: block; */
     /* margin: 0 auto; */
@@ -52,7 +51,7 @@ img {
 .list {
     /* font-size: 1.7rem; */
     border-radius: 1.85em;
-    background-color: rgba(255, 255, 255, 0.116);
+    background-color: rgba(255, 255, 255, 0.175);
 }
 .insert {
     display: block;
@@ -60,7 +59,6 @@ img {
     margin: 0 auto;
     margin-bottom: 1em;
 }
-
 input[type=text] { 
     display: inline-block;
     width: 63.8%;
@@ -71,53 +69,65 @@ input[type=text] {
 ::placeholder {
     font-family: 'Fuzzy Bubbles', cursive;
 }
-.button-save {
+.save {
     display: inline;
     width: 34.5%;
-    /* font-size: 2em; */
+    font-size: 1.7em;
     border-radius: 0.3em;
-    padding-bottom: 0.22em;
+    padding: 0 0;
     font-family: 'Fuzzy Bubbles', cursive;
 }
 .listContainer {
     /* font-size: 1.5em; */
-    width: 75%;
+    width: 90%;
+    margin: 0 auto;
+   
+    
     /* font-size: 2em; */
-    margin-left: 2em;
+    /* margin-left: 2em; */
     margin-bottom: 1em;
-    border-radius: 0.3em;
+    border-radius: 0.5em;
     background-color: rgba(255, 255, 255, 0.25);
 }
 .listItem { 
+    display: flex;
     text-align:justify;
     position: relative;
     max-height: 60px;
     width: 100%;
-    padding: 0.2em;
+    padding: 0.3em;
+    padding-right: 1.25em;
     margin-bottom: 0.6em;
-    border-radius: 0.3em;
+    border-radius: 0.5em;
     background-color: rgba(255, 255, 255, 0.25);
     overflow-y: auto;
 }
 input[type=checkbox] {
-    position: absolute;
-    left: -13.325%;
+
     height: 1.9em;
-    width: 1.9em;
+    width: 1.9em; 
+}
+label {
+    font-size: 1.5em;
+    width: 90%;
+    padding: 0.35em 0.8em 0;
 }
 .delete {
+    padding: 0;
+    margin: 0;
     /* float: right; */
     /* margin-right: ; */
-    /* font-size: 1em; */
-    position: absolute;
+    font-size: 1.55em;
+    max-height: 1.7em;
+    padding: 0 0.4em 0.2em 0.4em;
+    
     color: white;
     background-color: tomato;
     border-radius: 0.2em;
-    padding: 0 0.35em;
-    padding-bottom: 0.23em;
+    /* padding: 0 0.35em;
+    padding-bottom: 0.23em; */
     
-    top: 0%;
-    right:-15%;
+ 
 }
 
 .christmas {
@@ -138,7 +148,7 @@ input[type=checkbox] {
     border-radius: 0.15em;
 }  */
 .listItem::-webkit-scrollbar {
-    width:2vw;
+    width: 1.5em;
     
 
     /* border-radius: 0.15em; */
