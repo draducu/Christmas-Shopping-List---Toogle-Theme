@@ -30,7 +30,6 @@ if (theme === null) {
     hide(spanSnowManEl)
     document.getElementById("christmas-button").checked = true;
 }
-
 if (theme === "santa") {
     santa()
     document.getElementById("christmas-button").checked = true;
@@ -43,7 +42,6 @@ if (theme === "snowMan") {
     snowMan()
     document.getElementById("snowMan-button").checked = true;
 }
-
 function santa() {
     document.body.classList.remove("snow")
     document.body.classList.add("christmas")
@@ -52,7 +50,6 @@ function santa() {
     hide(spanTreeEl)
     hide(spanSnowManEl)
     myImageEl.src ="pictures/santa.png" //mod de a seta sursa imaginii
-
     localStorage.setItem("theme", "santa")
 }
 function tree() {
@@ -63,7 +60,6 @@ function tree() {
     hide(spanSantaEl)
     hide(spanSnowManEl)
     myImageEl.setAttribute("src", "pictures/tree.png") // un mod diferit de a seta sursa imaginii
-
     localStorage.setItem("theme", "tree")
 }
 function snowMan() {
@@ -74,92 +70,112 @@ function snowMan() {
     hide(spanTreeEl)
     hide(spanSantaEl)
     myImageEl.src ="pictures/snowMan.png"
-
     localStorage.setItem("theme", "snowMan")
 }
 christmasBtn.addEventListener("click", santa )
 treeBtn.addEventListener("click", tree )
 snowManBtn.addEventListener("click", snowMan )
-
-// Begin !!                             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-let saveButtonEl = document.getElementById("save-button-el")
-let listContainerEl = document.getElementById("listContainer-el")
-let input = document.getElementById("input-text-el")
+// Begin !!        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+const saveButtonEl = document.getElementById("save-button-el")
+const listContainerEl = document.getElementById("listContainer-el")
+const input = document.getElementById("input-text-el")
 let myList = []
-let position = -1
-class Template {
-    constructor(checkValue, textValue, button ) {
-        this.checkValue = checkValue;
-        this.textValue = textValue;
-        this.button = button;
-        this.position = position;
-    }
+
+function render(objectParameter) {     // aici am functia de rendere,
+    const listItemBox = document.createElement('div')
+    listItemBox.setAttribute("class","listItemBox")
+    listContainerEl.appendChild(listItemBox)
+
+    const listItem = document.createElement('div')
+    listItem.setAttribute("class","listItem")
+    listItemBox.appendChild(listItem)
+
+    const checkboxEl = document.createElement('input')
+    checkboxEl.setAttribute("type","checkbox")
+    checkboxEl.setAttribute("class","checkbox")
+    listItem.appendChild(checkboxEl)
+    checkboxEl.innerHTML = objectParameter.checkValue
+ 
+    const labelEl = document.createElement('label')
+    labelEl.setAttribute("class","label")
+    listItem.appendChild(labelEl)
+    labelEl.innerHTML = objectParameter.textValue
+ 
+    const buttonEl = document.createElement('button')
+    buttonEl.setAttribute("class","delete")
+    listItem.appendChild(buttonEl)
+    buttonEl.innerHTML = "x"
+
+    const statusEl = document.createElement('p')
+    statusEl.setAttribute("class","paragraph")
+    listItemBox.appendChild(statusEl)
+    statusEl.innerHTML = "status:"
+
+    buttonEl.addEventListener("click", function() {           // BUTTON X DELETE
+        listContainerEl.removeChild(listItemBox)
+        //aflam pozitia in array
+        const indexPosition = myList.indexOf(objectParameter)
+        myList.splice(indexPosition,1)
+       saveList()
+    })
+
+    checkboxEl.addEventListener("click", function() {           // CHECKBOX
+        if (checkboxEl.checked === true) {
+            checkboxEl.removeAttribute("checked")
+            checkboxEl.checked = false
+        }
+        else {
+            checkboxEl.checked = true
+            checkboxEl.setAttribute("checked")
+        }
+        // checkboxEl.checked = true
+        console.log(checkboxEl.checked + " am facut click")
+        const indexPosition = myList.indexOf(objectParameter)
+        console.log(indexPosition)
+        myList.indexOf(objectParameter).checkValue = checkboxEl.checked
+
+        // saveCheckboxValue()
+        localStorage.setItem(storeKey, JSON.stringify(myList))
+
+
+        listContainerEl.removeChild(listItemBox)
+        myList.forEach(render)
+
+    })
 }
-function renderlistItemBox() {
-    this["listItemBox" + position] = document.createElement('div')
-    this["listItemBox" + position].setAttribute("class","listItemBox")
-    listContainerEl.appendChild(this["listItemBox" + position])
-    renderlistItem()
-}
-function renderlistItem() {
-    this["listItem" + position] = document.createElement('div')
-    this["listItem" + position].setAttribute("class","listItem")
-    this["listItemBox" + position].appendChild(this["listItem" + position])
-    rendercheckBox()
-}
-function rendercheckBox() {
-    this["checkbox" + position] = document.createElement('input')
-    this["checkbox" + position].setAttribute("type","checkbox")
-    this["checkbox" + position].setAttribute("class","checkbox")
-    this["listItem" + position].appendChild(this["checkbox" + position])
-    renderlabel()
-}  
-function renderlabel() {
-    this["label" + position] = document.createElement('label')
-    this["label" + position].setAttribute("class","label")
-    this["listItem" + position].appendChild(this["label" + position])
-    this["label" + position].innerHTML = "VICTORIE"
-    renderdeleteButton()
-} 
-function renderdeleteButton() {
-    this["button" + position] = document.createElement('button')
-    this["button" + position].setAttribute("class","delete")
-    this["listItem" + position].appendChild(this["button" + position])
-    this["button" + position].innerHTML = "x"
-    renderstatus()
-} 
-function renderstatus() {
-    this["status" + position] = document.createElement('p')
-    this["status" + position].setAttribute("class","paragraph")
-    this["listItemBox" + position].appendChild(this["status" + position])
-    this["status" + position].innerHTML = "status:"
-} 
 
-
-
-
-
-
-function insert() {
-    position = position + 1
-    let myObject = new Template("checkValue", input.value, false, position)
+// function saveCheckboxValue() {
     
-    myList.push(myObject)
-    console.log("joined")
-    console.log(myList)
-    console.log(myList[0].textValue)
-
-    renderlistItemBox()
+// }
+function insert() {    //  functia insert imi creeaza un obiect in care pun ce citesc de pe input                                        pas 4
+    let myObject = {
+        checkValue: false,
+        textValue : input.value,
+    }
+    myList.push(myObject)  //  obiectul meu e impins intr o matrice de obiecte                                                           pas 5
+    saveList()     // apelez functia saveList()  ca sa pun myList(matricea mea de obiecte) in localStorage                               pas 6
+    // console.log("joined")
+    // console.log(myList)
+    // console.log(myList[0].textValue)
+    render(myObject)  // in baza valorilor obiectului meu, rendez obiectul                                                               pas 7
 }
-saveButtonEl.addEventListener("click", insert)
-
-
-
-
-
-
-
-
+saveButtonEl.addEventListener("click", insert)    //  codul incepe cu butonul de salvare ce imi apeleaza functia insert                  pas 3
+const storeKey = "list"
+// const storeTruth = "truth"
+function loadFromStorage() {  //   mi am incarcat din localStorage valorile in myList(matricea mea de obiectete cu valori anterioare)    pas 2
+    const string = localStorage.getItem(storeKey)
+    if (string) {
+        myList = JSON.parse(string)
+    }
+    myList.forEach(render)
+}
+loadFromStorage()   //      la primul ciclu de interpretare scot din localStorage valorile anterioare                                    pas 1                                                              
+function saveList() {     //                                 
+    localStorage.setItem(storeKey, JSON.stringify(myList))
+}
+// listContainerEl.addEventListener("click", function(event) {
+//     console.log(event.target)
+// })
 
 
 
