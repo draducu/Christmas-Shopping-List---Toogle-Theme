@@ -75,38 +75,38 @@ function snowMan() {
 christmasBtn.addEventListener("click", santa )
 treeBtn.addEventListener("click", tree )
 snowManBtn.addEventListener("click", snowMan )
-// Begin !!        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// Begin !!        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 2nd part
 const saveButtonEl = document.getElementById("save-button-el")
 const listContainerEl = document.getElementById("listContainer-el")
 const input = document.getElementById("input-text-el")
 let myList = []
 
-function render(objectParameter) {     // aici am functia de rendere,
-    const listItemBox = document.createElement('div')
+function render(objectParameter) {     //  aici am functia de render,                                                                                               pas 8
+    const listItemBox = document.createElement('div')    // am creat un div-listItemBox                                                                             pas 9
     listItemBox.setAttribute("class","listItemBox")
-    listContainerEl.appendChild(listItemBox)
+    listContainerEl.appendChild(listItemBox)      // ce a fost atasat la un div-listContainer  din html                                                             pas 10
 
-    const listItem = document.createElement('div')
+    const listItem = document.createElement('div')  // am creat un div-listItem   
     listItem.setAttribute("class","listItem")
-    listItemBox.appendChild(listItem)
+    listItemBox.appendChild(listItem)    // ce a fost atasat la un div-listItemBox, creat anterior                                                  `               pas 11
 
+    const truthFromStorage = JSON.parse(localStorage.getItem(storeKey))  // aici am scos obiectul meu din localStorage                                              pas 12
+    const indexPosition = myList.indexOf(objectParameter) // de fiecare data cand parcurg aceasta functie pentru un obiect trebuie sa stiu la care obiect sunt      pas 13
+    objectParameter.checkValue = truthFromStorage[indexPosition].checkValue // valoarea din localStotage pentru obiectul de index actual da valoare la variabila    pas 14
+    console.log(objectParameter.checkValue + " valoare de adevar in functie de index din localStorage ") // ce scot din localstorage f(index)                        
+    console.log(JSON.stringify(truthFromStorage) + " This is moment of truth from LS!") // imi arata cate obiecte si cate key am in consola (converteste un obiect in string)
+    // console.log((truthFromStorage) + "This is moment of truth !") // printeaza ca object, imi arata ca are 2 obiecte key in consola, not good
 
-    const momentOfTruth = JSON.parse(localStorage.getItem(storeKey))
-    objectParameter.checkValue = momentOfTruth.checkValue
-    console.log(momentOfTruth +"acesta e momentul adevarului")           // printeaza ca obiect ... imi arata ca are 2 obiecte key in consola
-    console.log(objectParameter.checkValue + " !!! valoare de adevar ce am scos din localstorage")
-
-
-    const checkboxEl = document.createElement('input')
+    const checkboxEl = document.createElement('input') // am creat un input-checkboxEl listItem                                                                     pas 15
     checkboxEl.setAttribute("type","checkbox")
     checkboxEl.setAttribute("class","checkbox")
-    listItem.appendChild(checkboxEl)
-    checkboxEl.innerHTML = objectParameter.checkValue
-    // if (objectParameter === true) {
-    //     checkboxEl.setAttribute("checked")
-    // }
+    listItem.appendChild(checkboxEl) // si l am atasat la div-listItem                                                                                              pas 16
 
+    if (objectParameter.checkValue === true) { // fara acest if, nu stie sa imi rendeze la inceput checkbox ul bifat                                                pas 17
+        checkboxEl.checked = true // checkbox bifatdaca valoarea mea de adevar luata din obiect de la key (checkValue) e adevarata
+    }
     // console.log(checkboxEl.checked + " la generare din render !")
+    checkboxEl.innerHTML = objectParameter.checkValue // pentru a mi renda 
  
     const labelEl = document.createElement('label')
     labelEl.setAttribute("class","label")
@@ -121,14 +121,21 @@ function render(objectParameter) {     // aici am functia de rendere,
     const statusEl = document.createElement('p')
     statusEl.setAttribute("class","paragraph")
     listItemBox.appendChild(statusEl)
-    statusEl.innerHTML = "status:"
+
+    statusEl.innerHTML = "not purchased"
+
+    // console.log(checkboxEl.checked + "inainte de if ul statusului")
+
+    if ( checkboxEl.checked) {
+        statusEl.innerHTML = "purchased"
+    }
 
     buttonEl.addEventListener("click", function() {           // BUTTON X DELETE
         listContainerEl.removeChild(listItemBox)
         //aflam pozitia in array
         const indexPosition = myList.indexOf(objectParameter)
         myList.splice(indexPosition,1)
-       saveList()
+        saveList()
     })
 
     checkboxEl.addEventListener("click", function() {   // CHECKBOX
@@ -158,15 +165,18 @@ function render(objectParameter) {     // aici am functia de rendere,
         // saveCheckboxValue()
         localStorage.setItem(storeKey, JSON.stringify(myList))
 
-
         // listContainerEl.removeChild(listItemBox)
         // myList.forEach(render)
 
+        if ( checkboxEl.checked) {
+            statusEl.innerHTML = "purchased"
+        }
+        else {
+            statusEl.innerHTML = "not purchased"
+        }
     })
 }
-
 // function saveCheckboxValue() {
-    
 // }
 function insert() {    //  functia insert imi creeaza un obiect in care pun ce citesc de pe input                                        pas 4
     let myObject = {
@@ -197,6 +207,3 @@ function saveList() {     //
 // listContainerEl.addEventListener("click", function(event) {
 //     console.log(event.target)
 // })
-
-
-
