@@ -90,11 +90,23 @@ function render(objectParameter) {     // aici am functia de rendere,
     listItem.setAttribute("class","listItem")
     listItemBox.appendChild(listItem)
 
+
+    const momentOfTruth = JSON.parse(localStorage.getItem(storeKey))
+    objectParameter.checkValue = momentOfTruth.checkValue
+    console.log(momentOfTruth +"acesta e momentul adevarului")           // printeaza ca obiect ... imi arata ca are 2 obiecte key in consola
+    console.log(objectParameter.checkValue + " !!! valoare de adevar ce am scos din localstorage")
+
+
     const checkboxEl = document.createElement('input')
     checkboxEl.setAttribute("type","checkbox")
     checkboxEl.setAttribute("class","checkbox")
     listItem.appendChild(checkboxEl)
     checkboxEl.innerHTML = objectParameter.checkValue
+    // if (objectParameter === true) {
+    //     checkboxEl.setAttribute("checked")
+    // }
+
+    // console.log(checkboxEl.checked + " la generare din render !")
  
     const labelEl = document.createElement('label')
     labelEl.setAttribute("class","label")
@@ -119,27 +131,36 @@ function render(objectParameter) {     // aici am functia de rendere,
        saveList()
     })
 
-    checkboxEl.addEventListener("click", function() {           // CHECKBOX
-        if (checkboxEl.checked === true) {
-            checkboxEl.removeAttribute("checked")
-            checkboxEl.checked = false
-        }
-        else {
-            checkboxEl.checked = true
-            checkboxEl.setAttribute("checked")
-        }
+    checkboxEl.addEventListener("click", function() {   // CHECKBOX
+        // console.log(checkboxEl.checked + "before")        // daca am facut click pe el e acum adevarat !!!!
+        // if (checkboxEl.checked === true) {
+        //     // checkboxEl.removeAttribute("checked")
+        //     checkboxEl.checked = false
+        //     console.log("inside if devine fals a " + checkboxEl.checked)
+        // }
+        // else {
+        //     checkboxEl.checked = true
+        //     console.log("inside else devine true")
+        //     // checkboxEl.setAttribute("checked")
+        // }
+
         // checkboxEl.checked = true
-        console.log(checkboxEl.checked + " am facut click")
+
+        // console.log("outside ... devine true")
+
+        console.log( "am facut click si a devenit " + checkboxEl.checked )
+
         const indexPosition = myList.indexOf(objectParameter)
         console.log(indexPosition)
-        myList.indexOf(objectParameter).checkValue = checkboxEl.checked
-
+        //!!!  --- !!!   aici se rupe firul...  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        myList[indexPosition].checkValue = checkboxEl.checked
+        // myList.indexOf(objectParameter).checkValue = checkboxEl.checked        pus inainte 
         // saveCheckboxValue()
         localStorage.setItem(storeKey, JSON.stringify(myList))
 
 
-        listContainerEl.removeChild(listItemBox)
-        myList.forEach(render)
+        // listContainerEl.removeChild(listItemBox)
+        // myList.forEach(render)
 
     })
 }
