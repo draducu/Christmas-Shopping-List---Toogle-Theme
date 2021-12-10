@@ -1,0 +1,216 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Begin !!!!! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Fuzzy Bubbles', cursive;
+    margin: 0;
+}
+main {
+    margin: 1.5em;
+}
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: rgb(255, 78, 78);
+    width:700px;
+    margin: 0.4em auto;
+}
+.columns {
+    display: flex;
+}
+.toogle {
+    width: 50%;
+}
+.list {
+    width: 50%;
+}
+.title {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    margin: 0.75em;
+}
+.radio-container {
+    font-size: 1.3em;
+    margin: 1em;
+}
+input[type=radio] {
+    width: 6%;
+    height: 1.1em;
+}
+img {
+    position: relative;
+    left: 2em;
+    border-radius: 50%;
+    height: 35vw;
+}
+.list {
+    border-radius: 1.2em;
+    background-color: rgba(255, 255, 255, 0.17);
+}
+.insert {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+input[type=text] { 
+    display: inline-block;
+    width: 64.5%;
+    font-size: 1.2em;
+    padding: 0.1em 0.25em;
+    box-sizing: border-box;
+}
+::placeholder {
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+.save {
+    display: inline;
+    width: 33.5%;
+    font-size: 1.1em;
+    border-radius: 0.3em;
+    padding-bottom: 0.18em;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+.listContainer {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding-right: 0.5em;
+    border-radius: 0.5em;
+    background-color: rgba(255, 255, 255, 0.2);
+    max-height: 340px;
+    overflow-y: auto;
+}
+.listItem { 
+    display: flex;
+    text-align:justify;
+    max-height: 5em;
+    width: 100%;
+    padding: 0.2em;
+    padding-right: 0.5em;
+    border-radius: 0.5em;
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow-y: auto;
+}
+.checkbox {
+    margin-top: 0.3em;
+    height: 2.2em;
+    width: 2.2em; 
+}
+.label {
+    font-size: 1.2em;
+    width: 90%;
+    padding: 0.45em 0.45em 0 0.45em;
+    line-height: 1.5em;
+    /* padding: 0.35em 0.8em 0; */
+}
+.delete {
+    font-size: 1.5em;
+    height: 1.4em;
+    padding: 0 0.3em 0.5em 0.3em;
+    margin-top: 0.04em;
+    color: white;
+    background-color: tomato;
+    border-radius: 0.3em;
+}
+.paragraph {
+    padding: 0.65em;
+}
+
+.christmas {
+    background: linear-gradient(rgb(0, 100, 255), red);
+    color: whitesmoke;
+}
+.tree {
+    background: linear-gradient(rgb(0, 100, 255), rgb(94, 197, 68));
+    color: whitesmoke;
+}
+.snow {
+    background: linear-gradient(rgb(0, 100, 255), rgb(20, 200, 255));
+    color: whitesmoke;
+}
+
+.listContainer {
+    scrollbar-width: 1.5em;
+    scrollbar-color: rgb(46, 78, 255) rgb(130, 184, 255);
+    /*firefox*/
+}
+.listItem {
+    scrollbar-width: 1.5em;
+    scrollbar-color: rgb(46, 78, 255) rgb(130, 184, 255);
+    /*firefox*/
+}   
+
+.listContainer::-webkit-scrollbar {
+    width: 1em;
+}
+.listContainer::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background: linear-gradient(rgb(109, 172, 255), rgb(0, 76, 255));
+}
+.listContainer::-webkit-scrollbar-track {
+    border-radius: 1em;
+    background-color: rgb(130, 184, 255);
+} 
+
+.listItem::-webkit-scrollbar {
+    width: 1em;
+}
+.listItem::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background: linear-gradient(rgb(109, 172, 255), rgb(0, 76, 255));
+}
+.listItem::-webkit-scrollbar-track {
+    border-radius: 1em;
+    background-color: rgb(130, 184, 255);
+} 

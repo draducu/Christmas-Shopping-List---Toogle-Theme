@@ -1,3 +1,12 @@
+const style = document.getElementById("style")
+if (typeof chrome !== "undefined" && typeof chrome.extension !== "undefined") {
+    console.log("extensie")
+    style.setAttribute("href","styles/index-extension.css")
+}
+else {
+    console.log("not extension")
+    style.setAttribute("href","styles/index.css")
+}
 const christmasBtn = document.getElementById("christmas-button")
 const treeBtn = document.getElementById("tree-button")
 const snowManBtn = document.getElementById("snowMan-button")
@@ -16,12 +25,6 @@ function hide(span) {
     if (span.style.display !== "none") {
         span.style.display = "none";
     }
-}
-if (typeof chrome !== "undefined" && typeof chrome.extension !== "undefined") {
-    console.log("extensie")
-}
-else {
-    console.log("not extensie")
 }
 theme = localStorage.getItem("theme")
 console.log(theme)
@@ -121,15 +124,11 @@ function render(objectParameter) {     //  aici am functia de render,           
     const statusEl = document.createElement('p')
     statusEl.setAttribute("class","paragraph")
     listItemBox.appendChild(statusEl)
-
     statusEl.innerHTML = "not purchased"
-
-    // console.log(checkboxEl.checked + "inainte de if ul statusului")
 
     if ( checkboxEl.checked) {
         statusEl.innerHTML = "purchased"
     }
-
     buttonEl.addEventListener("click", function() {           // BUTTON X DELETE
         listContainerEl.removeChild(listItemBox)
         //aflam pozitia in array
@@ -137,36 +136,11 @@ function render(objectParameter) {     //  aici am functia de render,           
         myList.splice(indexPosition,1)
         saveList()
     })
-
     checkboxEl.addEventListener("click", function() {   // CHECKBOX
-        // console.log(checkboxEl.checked + "before")        // daca am facut click pe el e acum adevarat !!!!
-        // if (checkboxEl.checked === true) {
-        //     // checkboxEl.removeAttribute("checked")
-        //     checkboxEl.checked = false
-        //     console.log("inside if devine fals a " + checkboxEl.checked)
-        // }
-        // else {
-        //     checkboxEl.checked = true
-        //     console.log("inside else devine true")
-        //     // checkboxEl.setAttribute("checked")
-        // }
-
-        // checkboxEl.checked = true
-
-        // console.log("outside ... devine true")
-
-        console.log( "am facut click si a devenit " + checkboxEl.checked )
-
         const indexPosition = myList.indexOf(objectParameter)
         console.log(indexPosition)
-        //!!!  --- !!!   aici se rupe firul...  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         myList[indexPosition].checkValue = checkboxEl.checked
-        // myList.indexOf(objectParameter).checkValue = checkboxEl.checked        pus inainte 
-        // saveCheckboxValue()
         localStorage.setItem(storeKey, JSON.stringify(myList))
-
-        // listContainerEl.removeChild(listItemBox)
-        // myList.forEach(render)
 
         if ( checkboxEl.checked) {
             statusEl.innerHTML = "purchased"
@@ -176,8 +150,6 @@ function render(objectParameter) {     //  aici am functia de render,           
         }
     })
 }
-// function saveCheckboxValue() {
-// }
 function insert() {    //  functia insert imi creeaza un obiect in care pun ce citesc de pe input                                        pas 4
     let myObject = {
         checkValue: false,
@@ -204,6 +176,3 @@ loadFromStorage()   //      la primul ciclu de interpretare scot din localStorag
 function saveList() {     //                                 
     localStorage.setItem(storeKey, JSON.stringify(myList))
 }
-// listContainerEl.addEventListener("click", function(event) {
-//     console.log(event.target)
-// })
