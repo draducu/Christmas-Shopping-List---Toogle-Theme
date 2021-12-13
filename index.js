@@ -116,10 +116,10 @@ function render(objectParameter) {     //  aici am functia de render,           
     listItem.appendChild(labelEl)
     labelEl.innerHTML = objectParameter.textValue
  
-    const buttonEl = document.createElement('button')
-    buttonEl.setAttribute("class","delete")
-    listItem.appendChild(buttonEl)
-    buttonEl.innerHTML = "x"
+    const deleteButtonEl = document.createElement('button')
+    deleteButtonEl.setAttribute("class","delete")
+    listItem.appendChild(deleteButtonEl)
+    deleteButtonEl.innerHTML = "x"
 
     const statusEl = document.createElement('p')
     statusEl.setAttribute("class","paragraph")
@@ -129,7 +129,7 @@ function render(objectParameter) {     //  aici am functia de render,           
     if ( checkboxEl.checked) {
         statusEl.innerHTML = "purchased"
     }
-    buttonEl.addEventListener("click", function() {           // BUTTON X DELETE
+    deleteButtonEl.addEventListener("click", function() {           // BUTTON X DELETE
         listContainerEl.removeChild(listItemBox)
         //aflam pozitia in array
         const indexPosition = myList.indexOf(objectParameter)
@@ -161,6 +161,7 @@ function insert() {    //  functia insert imi creeaza un obiect in care pun ce c
     // console.log(myList)
     // console.log(myList[0].textValue)
     render(myObject)  // in baza valorilor obiectului meu, rendez obiectul                                                               pas 7
+    input.value = ""
 }
 saveButtonEl.addEventListener("click", insert)    //  codul incepe cu butonul de salvare ce imi apeleaza functia insert                  pas 3
 const storeKey = "list"
