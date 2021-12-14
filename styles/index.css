@@ -75,13 +75,11 @@ h1 {
 }
 input[type=radio] {
     width: 6%;
-    
+    height: 1.35em;
 }
 img {
     display: block;
     margin: 2.2em auto;
-    /* position: relative; */
-    /* left: 2em; */
     border-radius: 50%;
     height: 75vw;
 }
@@ -96,7 +94,6 @@ img {
     display: block;
     width: 92.5%;
     margin: 0 auto;
-    /* margin-bottom: 1em; */
 }
 input[type=text] { 
     display: block;
@@ -111,10 +108,8 @@ input[type=text] {
     font-family: 'Fuzzy Bubbles', cursive;
 }
 .save {
-    /* display: block; */
     width: 100%;
     margin: 0 auto;
-    /* margin-bottom: 1em; */
     padding-bottom: 0.18em;
     font-size: 1.2em;
     border-radius: 0.3em;
@@ -129,64 +124,48 @@ input[type=text] {
 .listContainer {
     width: 92.5%;
     margin: 0.8em auto;
-    /* margin-bottom: 1em; */
-    /* padding-right: 0.5em; */
-    /* padding: 10em 0; */
     border-radius: 0.7em;
     background-color: rgba(255, 255, 255, 0.2);
-    /* max-height: 340px; */
-    /* overflow-y: auto; */
 }
 .listItemBox {
-    /* margin:0.7em 0; */
     border-radius: 0.7em;
 }
 .listItem { 
     margin:0 auto;
     display: flex;
-    /* text-align:justify; */
-    /* max-height: 5em; */
-    /* width: 90%; */
-    /* padding: 0.2em; */
-    /* padding-right: 0.5em; */
+    text-align:justify;
     border-radius: 0.7em;
     background-color: rgba(255, 255, 255, 0.2);
-    /* overflow-y: auto; */
 }
 .checkbox {
-    margin-left: 0.7em;
+    margin-left: 0.5em;
     margin-top: 0.3em;
     height: 2.3em;
     width: 2.3em; 
 }
 .label {
-    font-size: 1.2em;
+    font-size: 1.4em;
     width: 99%;
     padding: 0 0.3em;
-    padding-top: 0.5em;
+    padding-top: 0.2em;
     text-align: justify;
-    /* margin:0.2em; */
     line-height: 1.5em;
-    /* padding: 0.35em 0.8em 0; */
 }
 .delete {
     font-size: 1.2em;
     height: 1.6em;
     width: 1.7em;
-    margin-top: 0.2em;
-    margin-right: 0.35em;
+    margin-top: 0.18em;
+    margin-right: 0.2em;
     padding-bottom: 0.45em;
     color: white;
     background-color: tomato;
     border-radius: 0.3em;
-   
 }
 .paragraph {
     font-size: 0.8em;
     padding: 0.75em;
-    /* background: rgb(17, 0, 255); */
 }
-
 .christmas {
     background: linear-gradient(rgb(0, 100, 255), red);
     color: whitesmoke;
@@ -199,85 +178,40 @@ input[type=text] {
     background: linear-gradient(rgb(0, 100, 255), rgb(20, 200, 255));
     color: whitesmoke;
 }
-
-/* .listContainer {
-    scrollbar-width: 1.5em;
-    scrollbar-color: rgb(46, 78, 255) rgb(130, 184, 255);
-    
-}
-.listItem {
-    scrollbar-width: 1.5em;
-    scrollbar-color: rgb(46, 78, 255) rgb(130, 184, 255);
-    
-}   
-
-.listContainer::-webkit-scrollbar {
-    width: 1em;
-}
-.listContainer::-webkit-scrollbar-thumb {
-    border-radius: 1em;
-    background: linear-gradient(rgb(109, 172, 255), rgb(60, 0, 255));
-}
-.listContainer::-webkit-scrollbar-track {
-    border-radius: 1em;
-    background-color: rgb(130, 184, 255);
-} 
-
-.listItem::-webkit-scrollbar {
-    width: 1em;
-}
-.listItem::-webkit-scrollbar-thumb {
-    border-radius: 1em;
-    background-color: rgb(71, 100, 255);
-}
-.listItem::-webkit-scrollbar-track {
-    border-radius: 1em;
-    background-color: rgb(130, 184, 255);
-}  */
-
-/* * {
-    font-size: 0.33em;
-}
- */
 @media (min-width: 480px) {
     * {
         font-size: 1.3em;  
     }
-    /* main {
-        margin: 0.8em;
-    } */
     input[type=radio] {
         width: 6%;
-        height: 0.6em;
+        height: 0.5em;
     }
     .list {
         padding: 0.9 0em;
-        /* min-height: 90vw; */
+        min-height: 90vw;
     }
-    /* .insert {
-        width: 92.5%;
+    input[type=text] {
+        padding-top: 0.3em;
     }
-    .listContainer {
-        width: 92.5%;
-    } */
     .checkbox {
-        margin-left: 0.35em;
-        margin-top: 0.17em;
+        margin-left: 0.3em;
+        margin-top: 0.15em;
         height: 1.4em;
         width: 1.4em; 
     }
     .label {
-        padding-top: 0.3em;
+        padding-top: 0.1em;
     }
     .delete {
-        height: 1.4em;
+        height: 1.35em;
         width: 1.5em;
+        margin-top: 0.16em;
         margin-right: 0.23em;
         padding-bottom: 1.3em;
     }
     img {
         margin: 1.2em auto;
-        height: 50vw;
+        height: 45vw;
     }
 }
 @media (min-width: 768px) {
@@ -285,25 +219,22 @@ input[type=text] {
         font-size: 1em;  
     } 
     main {
-        margin: 1em;
-        min-height: 100vh;
+        margin:3.2em 1em;
     }
     h1 {
         font-size: 4em;
     }
     .columns {
         display: flex; 
-        
     }
     .toogle {
         width: 50%;
     }
     .list {
-        /* height: 85vh; */
+        min-height: 90vh; 
         width: 50%;
     }
     .title {
-        /* font-weight: ; */
         font-size: 3em;
     }
     .radio-container {
@@ -315,92 +246,57 @@ input[type=text] {
         height: 0.8em;
     }
     .image {
+        position: relative;
+        left: -0.5em;
     }
     img {
-        height: 40vw;
+        height: 35vw;
     } 
     input[type=text] { 
         font-size: 2.5em;
-        margin-bottom: 0.7em;
-    }
-    ::placeholder {
-        font-family: 'Fuzzy Bubbles', cursive;
     }
     .save {
         margin-bottom: 0.7em;
         font-size: 2.5em;
-        font-family: 'Fuzzy Bubbles', cursive;
     }
     .listContainer {
-        /* width: 92.5%; */
         margin-bottom: 1em;
-        padding-right: 0.5em;
         border-radius: 0.5em;
-        /* background-color: rgba(255, 255, 255, 0.2); */
-        max-height: 400px;
+        max-height:75vh; 
         overflow-y: auto;
     }
     .listItem { 
         display: flex;
         text-align:justify;
-        /* max-height: 5em; */
-        /* width: 100%; */
         padding: 0.2em;
-        padding-right: 0.5em;
         border-radius: 0.5em;
-        /* background-color: rgba(255, 255, 255, 0.2); */
-        overflow-y: auto;
     }
     .checkbox {
         margin-top: 0.3em;
-        height: 3.5em;
-        width: 3.5em; 
+        height: 3em;
+        width: 3em; 
     }
     .label {
         font-size: 2em;
         width: 90%;
-        padding: 0.3em 0.45em 0 0.45em;
+        padding: 0.2em 0.45em 0 0.45em;
         line-height: 1.5em;
-        /* padding: 0.35em 0.8em 0; */
     }
     .delete {
         font-size: 2em;
-       
         padding: 0 0.3em 0.5em 0.3em;
-        margin-top: 0.27em;
-        color: white;
-        background-color: tomato;
-        border-radius: 0.3em;
+        margin-top: 0.23em;
+        margin-right: 0.15em;
     }
     .paragraph {
         padding: 0.65em;
         font-size: 1.5em;
     }
-
-    .christmas {
-        background: linear-gradient(rgb(0, 100, 255), red);
-        color: whitesmoke;
-    }
-    .tree {
-        background: linear-gradient(rgb(0, 100, 255), rgb(94, 197, 68));
-        color: whitesmoke;
-    }
-    .snow {
-        background: linear-gradient(rgb(0, 100, 255), rgb(20, 200, 255));
-        color: whitesmoke;
-    }
-
     .listContainer {
         scrollbar-width: 1.5em;
         scrollbar-color: rgb(46, 78, 255) rgb(130, 184, 255);
         /*firefox*/
     }
-    .listItem {
-        scrollbar-width: 1.5em;
-        scrollbar-color: rgb(46, 78, 255) rgb(130, 184, 255);
-        /*firefox*/
-    }   
-
     .listContainer::-webkit-scrollbar {
         width: 1em;
     }
@@ -412,16 +308,87 @@ input[type=text] {
         border-radius: 1em;
         background-color: rgb(130, 184, 255);
     } 
-
-    .listItem::-webkit-scrollbar {
-        width: 1em;
+}
+@media (min-width: 1024px) {
+    main {
+        margin: 3.2em 2em;
     }
-    .listItem::-webkit-scrollbar-thumb {
-        border-radius: 1em;
-        background-color: rgb(71, 100, 255);
+    h1 {
+        font-size: 4em;
     }
-    .listItem::-webkit-scrollbar-track {
-        border-radius: 1em;
-        background-color: rgb(130, 184, 255);
-    } 
+    .list {
+       min-height: 85vh;
+    }
+    .title {
+        font-size: 3.5em;
+    }
+    .radio-container {
+        font-size: 2.8em;
+        padding:0.45em 0;
+        margin-top: 0em;
+        margin-bottom: 0em;
+    }
+    input[type=radio] {
+        width: 6%; 
+        height: 0.8em;
+    }
+    .image {
+        position: relative;
+        left: -0.8em;
+    }
+    img {
+        height: 30vw;
+    }
+    .listContainer {
+        max-height: 55vh;
+    }
+}
+@media (min-width:1366px) {
+    main {
+        display: grid;
+        place-items: center;
+    }
+    h1 {
+        font-size: 4em;
+        margin-top: 0em;
+    }
+    .title {
+        font-size: 3.5em;
+    }
+    .columns {
+        width: 85%;
+    }
+    .radio-container {
+        font-size: 2.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+    input[type=radio] {
+        width: 7%; 
+        height: 0.7em;
+    }
+    img {
+        max-width: 650px;
+        max-height: 650px;
+        height: 30vw;
+    }
+    .list {
+        border-radius: 1.75em;
+    }
+    .listContainer {
+        max-height: 60vh;
+    }
+    .checkbox {
+        height: 3em;
+        width: 3em; 
+    }
+    .label {
+        font-size: 2.4em;
+        padding-top: 0;
+    }
+    .delete {
+        margin-top: 0.2em;
+        margin-right: 0.1em;
+        width: 1.4em;
+    }
 }
