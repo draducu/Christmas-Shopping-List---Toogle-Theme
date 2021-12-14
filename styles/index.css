@@ -339,6 +339,10 @@ input[type=text] {
     img {
         height: 30vw;
     }
+    .delete {
+        padding-bottom:1.25em;
+        width: 1.4em;
+    }
     .listContainer {
         max-height: 55vh;
     }
@@ -387,8 +391,9 @@ input[type=text] {
         padding-top: 0;
     }
     .delete {
-        margin-top: 0.2em;
+        margin-top: 0.15em;
         margin-right: 0.1em;
         width: 1.4em;
+        padding-bottom: 1.3em;
     }
 }
