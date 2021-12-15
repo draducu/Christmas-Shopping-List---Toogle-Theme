@@ -97,7 +97,7 @@ function render(objectParameter) {     //  aici am functia de render,           
     const indexPosition = myList.indexOf(objectParameter) // de fiecare data cand parcurg aceasta functie pentru un obiect trebuie sa stiu la care obiect sunt      pas 14
     objectParameter.checkValue = truthFromStorage[indexPosition].checkValue // valoarea din localStotage pentru obiectul de index actual da valoare la variabila    pas 15
     console.log(objectParameter.checkValue + " valoare de adevar in functie de index din localStorage ") // ce scot din localstorage in f(index)                        
-    console.log(JSON.stringify(truthFromStorage) + " This is moment of truth from LS!") // imi arata cate obiecte si cate key am in consola (converteste un obiect in string)
+    console.log(JSON.stringify(truthFromStorage) + "Objects from inside localStorage!") // imi arata cate obiecte si cate key am in consola (converteste un obiect in string)
     // console.log((truthFromStorage) + "This is moment of truth !") // printeaza ca object, imi arata ca are 2 obiecte key in consola, not good ca nu zice ce e in ele
 
     const checkboxEl = document.createElement('input') // am creat un input-checkboxEl                                                                              pas 16
@@ -125,7 +125,7 @@ function render(objectParameter) {     //  aici am functia de render,           
     listItemBox.appendChild(statusEl) // si l am atasat la div-listItem 
     statusEl.innerHTML = "not purchased" // are ca default not purchased
 
-    if ( checkboxEl.checked) { // verifica checkboxEl sa vada daca e adevarat pentru a schimba mesajul in purchased                                                 pas 24
+    if (checkboxEl.checked) { // verifica checkboxEl sa vada daca e adevarat pentru a schimba mesajul in purchased                                                 pas 24
         statusEl.innerHTML = "purchased"
     }
     deleteButtonEl.addEventListener("click", function() {  // BUTTON X DELETE                                                                                       pas 25
@@ -171,6 +171,6 @@ function loadFromStorage() {  //   mi am incarcat din localStorage valorile in m
     myList.forEach(render)
 }
 loadFromStorage()   //   la primul ciclu de interpretare scot din localStorage valorile anterioare                                                                  pas 1                                                              
-function saveList() {                                    
+function saveList() {      // functia de salvare a listei                              
     localStorage.setItem(storeKey, JSON.stringify(myList))
 }
